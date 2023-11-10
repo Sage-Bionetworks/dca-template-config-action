@@ -1,0 +1,18 @@
+# action.yml
+name: 'DCA Template Config Action'
+description: 'Create a DCA template config file from a data model'
+inputs:
+  data-model:  # id of input
+    description: 'URL of data model jsonld'
+    required: true
+  path:
+    description: 'Where to write the config'
+outputs:
+  file: # id of output
+    description: 'Diagnostic output from conversion'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.data-model }}
+    - ${{ inputs.path }}
