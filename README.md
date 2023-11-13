@@ -20,7 +20,7 @@ Diagnostic output from conversion.
 
 ## Example usage
 
-uses: sage-bionetworks/dca-template-config-action@v1
-with:
+uses: sage-bionetworks/dca-template-config-action@main
+env:
   data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
   path: 'dca-template-config.json'
