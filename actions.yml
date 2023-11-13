@@ -2,7 +2,7 @@
 name: 'DCA Template Config Action'
 description: 'Create a DCA template config file from a data model'
 inputs:
-  data-model:  # id of input
+  data_model:  # id of input
     description: 'URL of data model jsonld'
     required: true
   path:
@@ -14,5 +14,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.data-model }}
+    - ${{ inputs.data_model }}
     - ${{ inputs.path }}
