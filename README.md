@@ -8,9 +8,9 @@ This action creates a DCA template config file from a data model.
 
 **Required** URL of data model jsonld file.
 
-## `path` 
+## `File` 
 
-Where to write the config.
+File to write the config.
 
 ## Outputs
 
@@ -23,4 +23,4 @@ Diagnostic output from conversion.
 uses: sage-bionetworks/dca-template-config-action@main
 env:
   data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
-  path: 'dca-template-config.json'
+  file: 'dca-template-config.json'
