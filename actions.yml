@@ -9,9 +9,9 @@ inputs:
     description: 'File to write the config'
     required: true
   include_schemas:
-    description: 'Space-delimited list of schemas to include in output'
+    description: 'Space-delimited list of schemas to include in output. Can\'t use with exclude_schemas.'
   exclude_schemas:
-    description: 'Space-delimited list of schemas to exclude from output'
+    description: 'Space-delimited list of schemas to exclude from output. Can\'t use with include_schemas.'
 outputs:
   result: # id of output
     description: 'Diagnostic output from conversion'
