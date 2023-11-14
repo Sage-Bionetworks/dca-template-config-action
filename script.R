@@ -1,7 +1,7 @@
 dm <- Sys.getenv("data_model")
 if (dm == "") stop("Need to supply `data_model` env variable")
 
-filename <- Sys.getenv("file")
+filename <- Sys.getenv("filename")
 if (filename == "") stop("Need to supply `filename` env variable")
 
 # Set path for renv library within dca container
