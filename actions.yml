@@ -5,7 +5,7 @@ inputs:
   data_model:  # id of input
     description: 'URL of data model jsonld'
     required: true
-  filename:
+  file:
     description: 'File to write the config'
     required: true
   include_schemas:
@@ -20,6 +20,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.data_model }}
-    - ${{ inputs.filename }}
+    - ${{ inputs.file }}
     - ${{ inputs.include_schemas }}
     - ${{ inputs.exclude_schemas }}
