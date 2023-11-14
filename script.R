@@ -9,18 +9,16 @@ if (file == "") stop("Need to supply `file` env variable")
 
 # include_schemas and exclude_schemas can't both be non NULL
 include_schemas <- Sys.getenv("include_schemas")
-ifelse(include_schemas == "") include_schemas <- NULL
-if (!is.null(include_schemas)) {
+if (include_schemas != "") {
   include_schemas <- strsplit(include_schemas, " ")
   include_schemas <- include_schemas[[1]]
-}
+} else include_schemas <- NULL
 
 exclude_schemas <- Sys.getenv("exclude_schemas")
-if (exclude_schemas == "") exclude_schemas <- NULL
-if (!is.null(exclude_schemas)) {
+if (exclude_schemas != "") {
   exclude_schemas <- strsplit(exclude_schemas, " ")
   exclude_schemas <- exclude_schemas[[1]]
-}
+} else exclude_schemas <- NULL
 
 datacurator::write_dca_template_config(data_model = dm,
                                        file = file,
