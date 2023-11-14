@@ -7,6 +7,11 @@ inputs:
     required: true
   path:
     description: 'Where to write the config'
+    required: true
+  include_schemas:
+    description: 'Space-delimited list of schemas to include in output'
+  exclude_schemas:
+    description: 'Space-delimited list of schemas to exclude from output'
 outputs:
   file: # id of output
     description: 'Diagnostic output from conversion'
@@ -16,3 +21,5 @@ runs:
   args:
     - ${{ inputs.data_model }}
     - ${{ inputs.path }}
+    - ${{ inputs.include_schemas }}
+    - ${{ inputs.exclude_schemas }}
