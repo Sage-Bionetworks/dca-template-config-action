@@ -12,13 +12,13 @@ This action creates a DCA template config file from a data model.
 
 **Required** File to write the config.
 
-## `include_schemas`
+## `include_data_types`
 
-Space-separated list of schemas to include in output. Can't be used with exclude_schemas.
+Space-separated list of data types to include in output. Can't be used with exclude_data_types.
 
-## `exclude_schemas`
+## `exclude_data_types`
 
-Space-separated list of schemas to exclude from output. Can't be used with include_schemas.
+Space-separated list of data types to exclude from output. Can't be used with include_data_types.
 
 ## Outputs
 
@@ -41,7 +41,7 @@ uses: sage-bionetworks/dca-template-config-action@main
 env:
   data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
   file: 'dca-template-config.json'
-  include_schemas: 'Patient Biospecimen'
+  include_data_types: 'Patient Biospecimen'
 
 Exclude Patient from output
 
@@ -49,4 +49,4 @@ uses: sage-bionetworks/dca-template-config-action@main
 env:
   data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
   file: 'dca-template-config.json'
-  exclude_schemas: 'Patient'
+  exclude_data_types: 'Patient'

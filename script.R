@@ -7,20 +7,20 @@ if (file == "") stop("Need to supply `file` env variable")
 # Set path for renv library within dca container
 .libPaths("/home/shiny/.cache/R/renv/library/app-fec508d6/R-4.1/x86_64-pc-linux-gnu")
 
-# include_schemas and exclude_schemas can't both be non NULL
-include_schemas <- Sys.getenv("include_schemas")
-if (include_schemas != "") {
-  include_schemas <- strsplit(include_schemas, " ")
-  include_schemas <- include_schemas[[1]]
-} else include_schemas <- NULL
+# include_data_types and exclude_data_types can't both be non NULL
+include_data_types <- Sys.getenv("include_data_types")
+if (include_data_types != "") {
+  include_data_types <- strsplit(include_data_types, " ")
+  include_data_types <- include_data_types[[1]]
+} else include_data_types <- NULL
 
-exclude_schemas <- Sys.getenv("exclude_schemas")
-if (exclude_schemas != "") {
-  exclude_schemas <- strsplit(exclude_schemas, " ")
-  exclude_schemas <- exclude_schemas[[1]]
-} else exclude_schemas <- NULL
+exclude_data_types <- Sys.getenv("exclude_data_types")
+if (exclude_data_types != "") {
+  exclude_data_types <- strsplit(exclude_data_types, " ")
+  exclude_data_types <- exclude_data_types[[1]]
+} else exclude_data_types <- NULL
 
 datacurator::write_dca_template_config(data_model = dm,
                                        file = file,
-                                       include_schemas = include_schemas,
-                                       exclude_schemas = exclude_schemas)
+                                       include_schemas = include_data_types,
+                                       exclude_schemas = exclude_data_types)

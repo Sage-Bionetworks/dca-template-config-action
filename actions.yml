@@ -8,10 +8,10 @@ inputs:
   file:
     description: 'File to write the config'
     required: true
-  include_schemas:
-    description: 'Space-delimited list of schemas to include in output. Can\'t use with exclude_schemas.'
-  exclude_schemas:
-    description: 'Space-delimited list of schemas to exclude from output. Can\'t use with include_schemas.'
+  include_data_types:
+    description: 'Space-delimited list of data types to include in output. Can\'t use with exclude_data_types.'
+  exclude_data_types:
+    description: 'Space-delimited list of data types to exclude from output. Can\'t use with include_data_types.'
 outputs:
   result: # id of output
     description: 'Diagnostic output from conversion'
@@ -21,5 +21,5 @@ runs:
   args:
     - ${{ inputs.data_model }}
     - ${{ inputs.file }}
-    - ${{ inputs.include_schemas }}
-    - ${{ inputs.exclude_schemas }}
+    - ${{ inputs.include_data_types }}
+    - ${{ inputs.exclude_data_types }}
