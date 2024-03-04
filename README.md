@@ -20,6 +20,10 @@ Space-separated list of data types to include in output. Can't be used with excl
 
 Space-separated list of data types to exclude from output. Can't be used with include_data_types.
 
+## `data_model_labels`
+
+**Required** How schematic reads data model labels. Default 'class_label'. Can also be `display_label`.
+
 ## Outputs
 
 ## `result`
@@ -34,6 +38,14 @@ uses: sage-bionetworks/dca-template-config-action@main
 env:
   data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
   file: 'dca-template-config.json'
+
+Compare to using data_model_labels = 'display_label'
+
+uses: sage-bionetworks/dca-template-config-action@main
+env:
+  data-model: 'https://raw.githubusercontent.com/Sage-Bionetworks/data-models/main/example.model.jsonld'
+  file: 'dca-template-config.json'
+  data_model_labels: 'display-label'
   
 Only include Patient and Biospecimen
 
