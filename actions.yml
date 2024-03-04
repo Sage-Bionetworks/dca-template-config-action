@@ -12,6 +12,10 @@ inputs:
     description: 'Space-delimited list of data types to include in output. Can\'t use with exclude_data_types.'
   exclude_data_types:
     description: 'Space-delimited list of data types to exclude from output. Can\'t use with include_data_types.'
+  data_model_labels:
+    description: 'class_label or display_label'
+    default: 'class_label'
+    required: true
 outputs:
   result: # id of output
     description: 'Diagnostic output from conversion'
@@ -23,3 +27,4 @@ runs:
     - ${{ inputs.file }}
     - ${{ inputs.include_data_types }}
     - ${{ inputs.exclude_data_types }}
+    - ${{ inputs.data_model_labels }}
